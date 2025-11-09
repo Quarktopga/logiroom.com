@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Créer une organisation - LOGIROOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/assets/ui.css" rel="stylesheet">
+  <script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/db.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/pages/org_create.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+  <main class="main">
+    <div id="sidebar"></div>
+    <section class="content">
+      <div class="section">
+        <h1>Création d'organisation</h1>
+        <div id="orgAlert"></div>
+
+        <div class="form-col">
+          <label for="orgName">Nom de l'organisation</label>
+          <input id="orgName" placeholder="Nom">
+        </div>
+        <div class="form-col">
+          <label for="orgType">Type</label>
+          <select id="orgType">
+            <option>Etablissement scolaire</option>
+            <option>Entreprise</option>
+            <option>Association</option>
+            <option>Club</option>
+          </select>
+        </div>
+
+        <div class="section" style="margin-top: 12px;">
+          <h2>1er bâtiment</h2>
+          <div class="form-row">
+            <div class="form-col">
+              <label for="bldName">Nom du bâtiment</label>
+              <input id="bldName" placeholder="Nom du bâtiment">
+            </div>
+            <div class="form-col">
+              <label for="bldType">Type</label>
+              <select id="bldType">
+                <option>Siège</option>
+                <option>Bureau</option>
+                <option>Local</option>
+                <option>Opéra</option>
+                <option>Gymnase</option>
+              </select>
+            </div>
+          </div>
+          <div id="extraBuildings"></div>
+          <div class="card-actions">
+            <button id="btnAddBuilding" class="btn btn-secondary">+ Ajouter un bâtiment</button>
+          </div>
+        </div>
+
+        <div class="form-col">
+          <label><input type="checkbox" id="orgPrivate"> Rendre cette organisation privée</label>
+        </div>
+        <div class="form-col" id="privateCodeRow" style="display: none;">
+          <label for="orgCode">Code d'accès (5 chiffres)</label>
+          <input id="orgCode" placeholder="12345" maxlength="5">
+        </div>
+
+        <div class="card-actions" style="margin-top: 12px;">
+          <button id="createOrgBtn" class="btn">Créer l'organisation et passer à l'enregistrement des salles</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer"></div>
+</body>
+</html>

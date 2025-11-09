@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Salles - LOGIROOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/assets/ui.css" rel="stylesheet">
+  <script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/db.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/pages/rooms.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+  <main class="main">
+    <div id="sidebar"></div>
+    <section class="content">
+      <div class="section">
+        <h1 id="roomsTitle">Salles</h1>
+        <div class="card-actions">
+          <a id="addRoomLink" href="#" class="btn">Ajouter une salle</a>
+        </div>
+        <div id="roomsAlert"></div>
+        <div id="roomsList"></div>
+      </div>
+    </section>
+  </main>
+  <div id="footer"></div>
+</body>
+</html>

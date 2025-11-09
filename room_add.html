@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Ajouter une salle - LOGIROOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/assets/ui.css" rel="stylesheet">
+  <script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/db.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/pages/room_add.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+  <main class="main">
+    <div id="sidebar"></div>
+    <section class="content">
+      <div class="section">
+        <h1>Ajouter une salle</h1>
+        <div id="roomAddAlert"></div>
+
+        <div class="form-col">
+          <label for="roomBuilding">Bâtiment</label>
+          <select id="roomBuilding"></select>
+        </div>
+        <div class="form-row">
+          <div class="form-col">
+            <label for="roomName">Nom de la salle</label>
+            <input id="roomName">
+          </div>
+          <div class="form-col">
+            <label for="roomType">Type</label>
+            <select id="roomType">
+              <option>réunion</option>
+              <option>informatique</option>
+              <option>auditorium</option>
+              <option>labo</option>
+              <option>gymnase</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-col">
+            <label for="roomFloor">Étage</label>
+            <input id="roomFloor" type="number" min="-10" max="100" value="0">
+          </div>
+          <div class="form-col">
+            <label for="roomLocation">Localisation précise (facultatif)</label>
+            <input id="roomLocation" placeholder="Aile B, couloir 3...">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-col">
+            <label for="roomStart">Heure de début (disponibilité)</label>
+            <input id="roomStart" type="time" value="04:00">
+          </div>
+          <div class="form-col">
+            <label for="roomEnd">Heure de fin (disponibilité)</label>
+            <input id="roomEnd" type="time" value="23:00">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-col">
+            <label><input type="checkbox" id="roomAccessCode"> Code d'accès requis</label>
+          </div>
+          <div class="form-col">
+            <label for="roomCapacity">Capacité (places)</label>
+            <input id="roomCapacity" type="number" min="1" value="10">
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Équipements</h2>
+          <div class="form-row">
+            <div class="form-col"><label><input type="checkbox" class="eqp" value="vidéoprojecteur"> Vidéoprojecteur</label></div>
+            <div class="form-col"><label><input type="checkbox" class="eqp" value="scène"> Scène</label></div>
+          </div>
+          <div class="form-row">
+            <div class="form-col"><label><input type="checkbox" class="eqp" value="ordinateurs"> Ordinateurs</label></div>
+            <div class="form-col"><label><input type="checkbox" class="eqp" value="labo"> Labo</label></div>
+          </div>
+          <div class="form-row">
+            <div class="form-col"><label><input type="checkbox" class="eqp" value="tableau"> Tableau blanc/craie</label></div>
+          </div>
+        </div>
+
+        <div class="form-col">
+          <label for="roomRestrictions">Restrictions (facultatif)</label>
+          <textarea id="roomRestrictions"></textarea>
+        </div>
+
+        <div class="form-col">
+          <label for="roomStatus">Statut</label>
+          <select id="roomStatus">
+            <option value="active">Active</option>
+            <option value="closed">Exceptionnellement fermée</option>
+          </select>
+        </div>
+
+        <div class="card-actions" style="margin-top: 12px;">
+          <button id="roomSaveBtn" class="btn">Enregistrement de la salle</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer"></div>
+</body>
+</html>

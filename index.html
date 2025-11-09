@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>LOGIROOM - Accueil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/assets/ui.css" rel="stylesheet">
+  <script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/pages/index.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+  <main class="main">
+    <div id="sidebar"></div>
+    <section class="content">
+      <div class="section">
+        <h1>Bienvenue sur LOGIROOM</h1>
+        <p>Réservez vos salles en toute simplicité. Accédez à vos organisations, créez des bâtiments et gérez vos réservations.</p>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-title">Créer une organisation</div>
+            <div class="card-meta">Établissements scolaires, entreprises, associations, clubs.</div>
+            <div class="card-actions">
+              <a href="/org_create.html" class="btn require-auth">Commencer</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Rejoindre une organisation</div>
+            <div class="card-meta">Par nom et type, avec code si privée.</div>
+            <div class="card-actions">
+              <a href="/org_join.html" class="btn require-auth">Rejoindre</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Réserver une salle</div>
+            <div class="card-meta">Cherchez par capacité, équipements, bâtiment et type.</div>
+            <div class="card-actions">
+              <a href="/reserve.html" class="btn require-auth">Réserver</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Mentions importantes</h2>
+        <ul>
+          <li>Le header, le footer et le panneau latéral sont chargés sur toutes les pages via fichiers séparés.</li>
+          <li>Hébergement GitHub Pages - repository logiroom.com.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <div id="footer"></div>
+</body>
+</html>

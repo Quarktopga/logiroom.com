@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Gérer mes réservations - LOGIROOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/assets/ui.css" rel="stylesheet">
+  <script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/db.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/pages/reservations.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+  <main class="main">
+    <div id="sidebar"></div>
+    <section class="content">
+      <div class="section">
+        <h1>Mes réservations</h1>
+
+        <div id="resSummary" class="section"></div>
+
+        <div class="tabbar">
+          <div class="tab active" data-tab="future">À venir</div>
+          <div class="tab" data-tab="past">Passées</div>
+          <div class="tab" data-tab="cancelled">Annulées</div>
+        </div>
+
+        <div class="filters">
+          <div class="form-col">
+            <label for="fOrg">Organisation</label>
+            <input id="fOrg" placeholder="Nom (filtre)">
+          </div>
+          <div class="form-col">
+            <label for="fBuilding">Bâtiment</label>
+            <input id="fBuilding" placeholder="Nom (filtre)">
+          </div>
+          <div class="form-col">
+            <label for="fRoom">Salle</label>
+            <input id="fRoom" placeholder="Nom (filtre)">
+          </div>
+          <div class="form-col">
+            <label for="fDate">Date</label>
+            <input id="fDate" type="date">
+          </div>
+          <div class="form-col">
+            <label for="fType">Type de salle</label>
+            <input id="fType" placeholder="Type (filtre)">
+          </div>
+          <div class="form-col">
+            <label for="fSearch">Recherche rapide</label>
+            <input id="fSearch" placeholder="Texte libre">
+          </div>
+        </div>
+
+        <div class="card-actions" style="margin-bottom: 10px;">
+          <a class="btn" href="/reserve.html">Nouvelle réservation</a>
+        </div>
+
+        <div id="resList"></div>
+      </div>
+    </section>
+  </main>
+  <div id="footer"></div>
+</body>
+</html>

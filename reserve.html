@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Réserver - LOGIROOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/assets/ui.css" rel="stylesheet">
+  <script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/db.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/pages/reserve.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+  <main class="main">
+    <div id="sidebar"></div>
+    <section class="content">
+      <div class="section">
+        <h1>Réserver une salle</h1>
+        <div id="reserveAlert"></div>
+
+        <div class="filters">
+          <div class="form-col">
+            <label for="rOrg">Organisation</label>
+            <select id="rOrg"></select>
+          </div>
+          <div class="form-col">
+            <label for="rBuilding">Bâtiment</label>
+            <select id="rBuilding">
+              <option value="tous">Tous</option>
+            </select>
+          </div>
+          <div class="form-col">
+            <label for="rDate">Date</label>
+            <input id="rDate" type="date">
+          </div>
+          <div class="form-col">
+            <label for="rStart">Heure de début</label>
+            <input id="rStart" type="time" value="09:00">
+          </div>
+          <div class="form-col">
+            <label for="rEnd">Heure de fin</label>
+            <input id="rEnd" type="time" value="11:00">
+          </div>
+          <div class="form-col">
+            <label for="rCap">Capacité minimale</label>
+            <input id="rCap" type="number" min="1" placeholder="Nombre de participants">
+          </div>
+          <div class="form-col">
+            <label for="rType">Type de salle</label>
+            <select id="rType">
+              <option>indifférent</option>
+              <option>réunion</option>
+              <option>informatique</option>
+              <option>auditorium</option>
+              <option>labo</option>
+              <option>gymnase</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Équipements nécessaires</h2>
+          <div class="form-row">
+            <div class="form-col"><label><input type="checkbox" class="req-eqp" value="vidéoprojecteur"> Vidéoprojecteur</label></div>
+            <div class="form-col"><label><input type="checkbox" class="req-eqp" value="scène"> Scène</label></div>
+          </div>
+          <div class="form-row">
+            <div class="form-col"><label><input type="checkbox" class="req-eqp" value="ordinateurs"> Ordinateurs</label></div>
+            <div class="form-col"><label><input type="checkbox" class="req-eqp" value="labo"> Labo</label></div>
+          </div>
+          <div class="form-row">
+            <div class="form-col"><label><input type="checkbox" class="req-eqp" value="tableau"> Tableau blanc/craie</label></div>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button id="rSearch" class="btn">Rechercher</button>
+        </div>
+
+        <div id="rResults" style="margin-top: 12px;"></div>
+      </div>
+    </section>
+  </main>
+  <div id="footer"></div>
+</body>
+</html>
